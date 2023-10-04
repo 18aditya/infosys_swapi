@@ -11,6 +11,7 @@ function App() {
 
   const handleSearch = () => {
     isLoading(true);
+    setPage(1)
     getData();
   };
 
