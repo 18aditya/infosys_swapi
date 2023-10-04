@@ -17,6 +17,7 @@ function App() {
 
   const handleJumpPage = (type) => {
     isLoading(true);
+    setName("")
     switch (type) {
       case "first":
         if(currentPage !== 1) setPage(1)
@@ -28,6 +29,7 @@ function App() {
 
   const handleScrollPage = (type) => {
     isLoading(true);
+    setName("")
     switch (type) {
       case "prev":
         if(currentPage !== 1) setPage(currentPage - 1)
