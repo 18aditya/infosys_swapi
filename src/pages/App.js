@@ -18,10 +18,10 @@ function App() {
     isLoading(true);
     switch (type) {
       case "first":
-        if(currentPage != 1) setPage(1)
+        if(currentPage !== 1) setPage(1)
         break;
       default:
-        if(currentPage != Math.ceil(data.count / 10)) setPage(Math.ceil(data.count / 10))
+        if(currentPage !== Math.ceil(data.count / 10)) setPage(Math.ceil(data.count / 10))
     }
   };
 
@@ -29,10 +29,10 @@ function App() {
     isLoading(true);
     switch (type) {
       case "prev":
-        if(currentPage != 1) setPage(currentPage - 1)
+        if(currentPage !== 1) setPage(currentPage - 1)
         break;
       default:
-        if(currentPage != Math.ceil(data.count / 10)) setPage(currentPage + 1)
+        if(currentPage !== Math.ceil(data.count / 10)) setPage(currentPage + 1)
     }
   };
 
@@ -90,17 +90,17 @@ function App() {
           ):"Loading..."}
         </div>
         <div style={{ display: "flex", flexDirection: "row" }}>
-          <button disabled={currentPage == 1}  onClick={()=>handleJumpPage("first")}>
+          <button disabled={currentPage === 1}  onClick={()=>handleJumpPage("first")}>
             <Box string="First page" />
           </button>
-          <button disabled={currentPage == 1}  onClick={()=>handleScrollPage("prev")}>
+          <button disabled={currentPage === 1}  onClick={()=>handleScrollPage("prev")}>
             <Box string="Previous" />
           </button>
           <Box string={loading ? "Loading...":`${currentPage}/ ${Math.ceil(data.count / 10)}`} />
-          <button disabled={currentPage == Math.ceil(data.count / 10)} onClick={()=>handleScrollPage("next")}>
+          <button disabled={currentPage === Math.ceil(data.count / 10)} onClick={()=>handleScrollPage("next")}>
             <Box string="Next" />
           </button>
-          <button disabled={currentPage == Math.ceil(data.count / 10)} onClick={()=>handleJumpPage("last")}>
+          <button disabled={currentPage === Math.ceil(data.count / 10)} onClick={()=>handleJumpPage("last")}>
             <Box string="Last Page" />
           </button>
         </div>

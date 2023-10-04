@@ -7,12 +7,12 @@ import Box from "../components/box";
 function Details() {
   let { id } = useParams();
   const [data, setData] = useState([]);
-  const [loading, isLoading] = useState(true);
+
 
   useEffect(() => {
     const getData = async () => {
       const data = await getPeopleDetails(id);
-      isLoading(false);
+ 
 
       setData({
         "Name": data.data.name,
